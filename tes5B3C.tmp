@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wmjpmykwi3u6"]
+
+[ext_resource type="Script" path="res://torre_aceite.gd" id="1_o6ksv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5btkn"]
+radius = 15.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="torre-aceite" type="Node2D" parent="."]
+script = ExtResource("1_o6ksv")
+
+[node name="Area2D" type="Area2D" parent="torre-aceite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torre-aceite/Area2D"]
+shape = SubResource("CircleShape2D_5btkn")
+
+[node name="Camera2D" type="Camera2D" parent="."]

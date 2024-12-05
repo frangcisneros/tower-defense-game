@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://wmjpmykwi3u6"]
+
+[ext_resource type="PackedScene" uid="uid://cqip1n4d3jh2w" path="res://placement/placement.tscn" id="1_ds4km"]
+[ext_resource type="PackedScene" uid="uid://ctna60u6s6y4c" path="res://torre-aceite/torre_aceite.tscn" id="1_tjqee"]
+[ext_resource type="PackedScene" uid="uid://cs2qxioxmc7nl" path="res://basic-enemy/basic-enemy.tscn" id="3_w5xkd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="placement" parent="." instance=ExtResource("1_ds4km")]
+
+[node name="torre-aceite" parent="." instance=ExtResource("1_tjqee")]
+
+[node name="basic-enemy" parent="." instance=ExtResource("3_w5xkd")]
+position = Vector2(30, -15)
