@@ -12,8 +12,19 @@ script = ExtResource("1_1u68f")
 zoom = Vector2(1.825, 1.825)
 
 [node name="placement" parent="." instance=ExtResource("1_ds4km")]
+position = Vector2(-219, -30)
+
+[node name="placement2" parent="." instance=ExtResource("1_ds4km")]
+position = Vector2(-123, -31)
+
+[node name="placement3" parent="." instance=ExtResource("1_ds4km")]
+position = Vector2(-43, 69)
+
+[node name="placement4" parent="." instance=ExtResource("1_ds4km")]
+position = Vector2(135, 55)
 
 [node name="torre-aceite" parent="." instance=ExtResource("1_tjqee")]
+position = Vector2(-285, 153)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
