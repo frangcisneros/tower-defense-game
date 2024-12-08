@@ -14,7 +14,7 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	mouseOver = false
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	difference = mousePos - get_global_mouse_position()
 	
 	if Input.is_action_pressed("Click") and mouseOver and difference != Vector2.ZERO and not inPlacement:
