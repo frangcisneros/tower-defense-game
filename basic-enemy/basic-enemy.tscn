@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://basic-enemy/basic_enemy.gd" id="1_5bxdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tki8d"]
-radius = 22.0
 
 [node name="basic-enemy" type="PathFollow2D"]
 loop = false
 script = ExtResource("1_5bxdn")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_tki8d")

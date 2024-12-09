@@ -1,18 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctna60u6s6y4c"]
+[gd_scene load_steps=5 format=3 uid="uid://ctna60u6s6y4c"]
 
 [ext_resource type="Script" path="res://torre-aceite/torre-aceite.gd" id="1_fslmn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5btkn"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ce1d1"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hr3xp"]
+
 [node name="torre-aceite" type="Node2D"]
-position = Vector2(0, 93)
 script = ExtResource("1_fslmn")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="body" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_5btkn")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="attack-area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack-area"]
+shape = SubResource("CircleShape2D_ce1d1")
+debug_color = Color(0.372651, 0.595672, 0.437935, 0.42)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="tower-attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tower-attack"]
+shape = SubResource("CircleShape2D_hr3xp")
+debug_color = Color(0.661524, 0.351403, 0.940738, 0.42)
+
+[node name="attack-timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="mouse_entered" from="body" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="body" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="attack-area" to="." method="_on_attackarea_area_entered"]
+[connection signal="area_exited" from="attack-area" to="." method="_on_attackarea_area_exited"]

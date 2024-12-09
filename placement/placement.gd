@@ -12,6 +12,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if "isTower" in tower:
 		tower.inPlacement = true
 		tower.global_position = coordinates
-
-func _process(delta: float) -> void:
-	print("Placement position", self.global_position)
