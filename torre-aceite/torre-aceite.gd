@@ -26,7 +26,6 @@ func _on_area_2d_mouse_exited() -> void:
 	mouseOver = false
 	
 func _process(_delta: float) -> void:
-	print(attackArea.get_overlapping_areas())
 	if attackBool:
 		attack(targetEnemy)
 	
@@ -39,7 +38,6 @@ func _process(_delta: float) -> void:
 	
 func _on_attackarea_area_entered(area: Area2D) -> void:
 	if "isEnemy" in area.get_parent() and attackBool == false:
-		#attackArea.set_deferred("monitoring", true)
 		targetEnemy = attackArea.get_overlapping_areas()[0]
 		targetEnemyRID = area.get_rid()
 		attackBool = true

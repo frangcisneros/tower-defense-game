@@ -1,36 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://wmjpmykwi3u6"]
+[gd_scene load_steps=6 format=3 uid="uid://wmjpmykwi3u6"]
 
 [ext_resource type="Script" path="res://test_scene.gd" id="1_1u68f"]
 [ext_resource type="PackedScene" uid="uid://cqip1n4d3jh2w" path="res://placement/placement.tscn" id="1_ds4km"]
 [ext_resource type="PackedScene" uid="uid://ctna60u6s6y4c" path="res://torre-aceite/torre_aceite.tscn" id="1_tjqee"]
 [ext_resource type="PackedScene" uid="uid://c8fvwnl7fj5kk" path="res://lvl-1/lvl-1-path.tscn" id="4_s4fsq"]
+[ext_resource type="PackedScene" uid="uid://dee8wanbyy006" path="res://ui/lvl-ui.tscn" id="5_jy75v"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1u68f")
 
+[node name="lvl-ui" parent="." instance=ExtResource("5_jy75v")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-53, -17)
+position = Vector2(640, 360)
 scale = Vector2(0.0249321, 0.529965)
-zoom = Vector2(2.005, 2.005)
+zoom = Vector2(0.92, 0.92)
 
 [node name="placement" parent="." instance=ExtResource("1_ds4km")]
-position = Vector2(-219, -30)
+position = Vector2(434, 296)
 
 [node name="placement2" parent="." instance=ExtResource("1_ds4km")]
-position = Vector2(-123, -31)
+position = Vector2(530, 295)
 
 [node name="placement3" parent="." instance=ExtResource("1_ds4km")]
-position = Vector2(-43, 69)
+position = Vector2(610, 395)
 
 [node name="placement4" parent="." instance=ExtResource("1_ds4km")]
-position = Vector2(135, 55)
+position = Vector2(788, 381)
 
 [node name="torre-aceite" parent="." instance=ExtResource("1_tjqee")]
-position = Vector2(-271, -29)
+position = Vector2(382, 297)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="lvl-1-path" parent="." instance=ExtResource("4_s4fsq")]
+position = Vector2(653, 326)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
