@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctna60u6s6y4c"]
+[gd_scene load_steps=6 format=3 uid="uid://ctna60u6s6y4c"]
 
 [ext_resource type="Script" path="res://torre-aceite/torre-aceite.gd" id="1_fslmn"]
+[ext_resource type="Texture2D" uid="uid://cp7y8g6gseikg" path="res://torre-aceite/sprite.png" id="2_x861r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5btkn"]
 radius = 15.0
@@ -12,6 +13,11 @@ radius = 30.0
 
 [node name="torre-aceite" type="Node2D"]
 script = ExtResource("1_fslmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.0986328, 0.0986328)
+texture = ExtResource("2_x861r")
 
 [node name="body" type="Area2D" parent="."]
 
