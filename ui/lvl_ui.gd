@@ -16,8 +16,10 @@ func _ready() -> void:
 	for tower in avaiableTowers:
 		var tempButton = towerButton.instantiate()
 		tempButton.get_child(0).text = "[center]%s[/center]" % "Torre Aceite"
-		var texture = load("res://torre-aceite/sprite.png")
-		var texturePressed = load("res://torre-aceite/sprite-pressed.png")
+		#probablemente cambiar "sprite" por algo como "sprite-button-tower"
+		var texture = load(str(tower,"/sprite.png")) 
+		#aca lo mismo 
+		var texturePressed = load(str(tower,"/sprite-pressed.png")) 
 		tempButton.get_child(1).set_texture_normal(texture)
 		tempButton.get_child(1).set_texture_pressed(texturePressed)
 		
